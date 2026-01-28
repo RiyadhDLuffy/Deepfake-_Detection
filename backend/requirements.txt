@@ -25,3 +25,4 @@ python-dotenv>=1.0.0
 
 # Utilities
 aiofiles>=23.2.0
+ultralytics>=8.0.0
