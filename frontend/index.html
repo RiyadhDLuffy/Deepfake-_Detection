@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>👁️ TruthLens - نظام كشف التزييف العميق</title>
+    <meta name="description" content="نظام ذكي لكشف الصور المزيفة (Deepfakes) باستخدام الذكاء الاصطناعي">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+
+    <!-- PWA & Icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="theme-color" content="#00f2ff">
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="plant-icon">👁️</div>
+            <div class="loader-text">جاري تحميل TruthLens...</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">👁️</span>
+                    <div class="logo-text">
+                        <h1>TruthLens</h1>
+                        <span>كشف التزييف العميق</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">الرئيسية</a>
+                    <a href="#upload" class="nav-link">تحليل صورة</a>
+                    <a href="#camera" class="nav-link">فحص مباشر</a>
+                    <a href="#compare" class="nav-link">مقارنة</a>
+                    <a href="#stats" class="nav-link">بيانات</a>
+                    <a href="#about" class="nav-link">حول النظام</a>
+                </nav>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#home" class="mobile-nav-link active">🏠 الرئيسية</a>
+            <a href="#upload" class="mobile-nav-link">📤 تحليل صورة</a>
+            <a href="#camera" class="mobile-nav-link">📷 فحص مباشر</a>
+            <a href="#compare" class="mobile-nav-link">⚖️ مقارنة</a>
+            <a href="#stats" class="mobile-nav-link">📊 بيانات</a>
+            <a href="#about" class="mobile-nav-link">ℹ️ حول النظام</a>
+        </div>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <!-- Cyber background effect could go here -->
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>🛡️ حماية من التزييف الرقمي</span>
+                </div>
+                <h1 class="hero-title">
+                    اكشف الحقيقة
+                    <span class="gradient-text">خلف الصور</span>
+                </h1>
+                <p class="hero-description">
+                    نظام متطور يستخدم الذكاء الاصطناعي لكشف الصور المولدة (Deepfakes)
+                    وتحليل التلاعب الرقمي بدقة عالية.
+                </p>
+                <div class="hero-features">
+                    <div class="feature-badge">
+                        <span class="feature-icon">🤖</span>
+                        <span>كشف AI Generated</span>
+                    </div>
+                    <div class="feature-badge">
+                        <span class="feature-icon">👤</span>
+                        <span>تحليل الوجوه</span>
+                    </div>
+                    <div class="feature-badge">
+                        <span class="feature-icon">🔍</span>
+                        <span>تحليل ELA</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#upload" class="btn btn-primary btn-large">
+                        <span>ابدأ الفحص الآن</span>
+                    </a>
+                    <a href="#about" class="btn btn-secondary btn-large">
+                        <span>كيف يعمل؟</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section id="upload" class="upload-section">
+            <div class="section-header">
+                <span class="section-badge">التحليل</span>
+                <h2>افحص صحة الصورة</h2>
+                <p>ارفع صورة للتحقق مما إذا كانت حقيقية أم مزيفة</p>
+            </div>
+
+            <div class="upload-container">
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="17 8 12 3 7 8" />
+                            <line x1="12" y1="3" x2="12" y2="15" />
+                        </svg>
+                    </div>
+                    <h3>اسحب وأفلت الصورة هنا</h3>
+                    <p>أو اضغط لاختيار ملف</p>
+                    <input type="file" id="fileInput" accept="image/*,video/*" hidden>
+                </div>
+
+                <!-- Preview Area -->
+                <div class="preview-area" id="previewArea" style="display: none;">
+                    <div class="preview-header">
+                        <h3>الصورة المرفوعة</h3>
+                        <button class="btn btn-icon" id="clearImage" title="حذف الصورة">❌</button>
+                    </div>
+                    <div class="preview-image-container">
+                        <img id="previewImage" src="" alt="Preview">
+                    </div>
+                    <div class="analysis-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeClassification" checked>
+                            <span>تصنيف (Real/Fake)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeDetection" checked>
+                            <span>كشف الوجوه</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeSegmentation" checked>
+                            <span>تحليل التلاعب (ELA)</span>
+                        </label>
+                    </div>
+                    <button class="btn btn-primary btn-large btn-full" id="analyzeBtn">
+                        <span>🔍 بدء التحليل</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-container" id="resultsContainer" style="display: none;">
+
+                <!-- Classification Result -->
+                <div class="result-card" id="classificationResult">
+                    <div class="result-card-header">
+                        <span class="result-icon">🎯</span>
+                        <h4>النتيجة النهائية</h4>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="main-result">
+                            <div class="disease-name" id="diseaseName">-</div>
+                            <div class="disease-name-ar" id="diseaseNameAr">-</div>
+                            <div class="health-status" id="healthStatus">
+                                <span class="status-badge">-</span>
+                            </div>
+                        </div>
+                        <div class="confidence-display">
+                            <span class="confidence-label">نسبة الثقة</span>
+                            <div class="confidence-value" id="confidenceValue">0%</div>
+                            <div class="confidence-bar-large">
+                                <div class="confidence-fill-large" id="confidenceFill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detection Result -->
+                <div class="result-card" id="detectionResult">
+                    <div class="result-card-header">
+                        <span class="result-icon">👤</span>
+                        <h4>كشف الوجوه</h4>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="detection-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" id="numDetections">0</span>
+                                <span class="stat-label">وجوه مكتشفة</span>
+                            </div>
+                        </div>
+                        <div class="detection-image-container">
+                            <img id="detectionImage" src="" alt="Detection Result">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segmentation Result -->
+                <div class="result-card" id="segmentationResult">
+                    <div class="result-card-header">
+                        <span class="result-icon">🎨</span>
+                        <h4>تحليل التلاعب (ELA)</h4>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="segmentation-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" id="diseasePercentage">0%</span>
+                                <span class="stat-label">نسبة التلاعب</span>
+                            </div>
+                        </div>
+                        <div class="segmentation-images">
+                            <div class="seg-image-box">
+                                <span class="seg-label">قناع ELA</span>
+                                <img id="maskImage" src="" alt="Mask">
+                            </div>
+                            <div class="seg-image-box">
+                                <span class="seg-label">تحليل المناطق</span>
+                                <img id="overlayImage" src="" alt="Overlay">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Analysis Result -->
+                <div class="result-card" id="advancedAnalysisResult" style="grid-column: 1 / -1; display: none;">
+                    <div class="result-card-header">
+                        <span class="result-icon">🧬</span>
+                        <h4>التحليل الجنائي المتقدم</h4>
+                    </div>
+                    <div class="result-card-body">
+                        <div class="advanced-grid">
+                            <div class="metrics-list">
+                                <div class="metric-box">
+                                    <span class="m-label">تباين الضوضاء</span>
+                                    <span class="m-value" id="noiseVar">0</span>
+                                </div>
+                                <div class="metric-box">
+                                    <span class="m-label">مقياس الحدة</span>
+                                    <span class="m-value" id="blurScore">0</span>
+                                </div>
+                            </div>
+                            <div class="advanced-images">
+                                <div class="adv-img-box">
+                                    <h6>تحليل التردد (FFT)</h6>
+                                    <img id="fftImage" src="" alt="FFT">
+                                </div>
+                                <div class="adv-img-box">
+                                    <h6>تحليل مستوى الخطأ (ELA)</h6>
+                                    <img id="elaImage" src="" alt="ELA">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Camera Section -->
+        <section id="camera" class="camera-section">
+            <div class="section-header">
+                <span class="section-badge">مباشر</span>
+                <h2>فحص الفيديو المباشر</h2>
+            </div>
+            <div class="camera-container">
+                <div class="camera-view">
+                    <video id="cameraVideo" autoplay playsinline></video>
+                    <canvas id="cameraCanvas" style="display: none;"></canvas>
+                    <div class="camera-overlay" id="cameraOverlay">
+                        <div class="camera-icon">📷</div>
+                        <p>اضغط لتفعيل الكاميرا</p>
+                    </div>
+                    <div class="camera-info" id="cameraInfo" style="display: none;">
+                        <div class="fps-counter"><span id="fpsValue">0</span> FPS</div>
+                    </div>
+                </div>
+                <div class="camera-controls">
+                    <button class="btn btn-primary btn-large" id="startCamera">تشغيل الكاميرا</button>
+                    <button class="btn btn-danger btn-large" id="stopCamera" style="display: none;">إيقاف</button>
+                </div>
+                <div class="live-results" id="liveResults" style="display: none;">
+                    <div class="live-result-item">
+                        <span class="label">الحالة:</span>
+                        <span class="value" id="liveClassName">-</span>
+                    </div>
+                    <div class="live-result-item">
+                        <span class="label">الثقة:</span>
+                        <span class="value" id="liveConfidence">-</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compare Section -->
+        <section id="compare" class="compare-section">
+            <div class="section-header">
+                <span class="section-badge">مقارنة</span>
+                <h2>مقارنة الصور</h2>
+                <p>قارن بين الصورة الأصلية والمشتبه بها</p>
+            </div>
+            <div class="compare-container">
+                <div class="compare-upload-grid">
+                    <div class="upload-box" id="compareBox1">
+                        <h5>الصورة الأصلية</h5>
+                        <img id="compareImg1" src="" style="display:none;">
+                    </div>
+                    <div class="upload-box" id="compareBox2">
+                        <h5>الصورة المشتبه بها</h5>
+                        <img id="compareImg2" src="" style="display:none;">
+                    </div>
+                </div>
+                <input type="file" id="compareInput1" hidden>
+                <input type="file" id="compareInput2" hidden>
+                <div class="compare-controls">
+                    <button class="btn btn-primary" id="startComparison">بدء المقارنة</button>
+                </div>
+                <div class="comparison-results" id="comparisonResults" style="display: none;">
+                    <div class="comp-summary-card">
+                        <h4 id="compHeadline">-</h4>
+                    </div>
+                    <div class="comp-visuals">
+                        <div class="comp-visual-box">
+                            <h6>الفرق البصري</h6>
+                            <img id="diffImg" src="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">👁️</span>
+                    <span class="logo-text">TruthLens</span>
+                </div>
+                <p>نظام كشف التزييف العميق - Deepfake Detection System</p>
+                <div class="footer-copyright">
+                    &copy; 2026 TruthLens AI
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-header">
+            <span>المستشار الأمني</span>
+            <button class="chatbot-close" id="closeChat">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="msg bot">مرحباً! أنا خبير الأدلة الرقمية. كيف يمكنني مساعدتك؟</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="اسأل عن كشف التزييف...">
+            <button id="sendChat">➤</button>
+        </div>
+    </div>
+    <button class="chatbot-toggle" id="toggleChat">💬</button>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="js/app.js?v=2.0"></script>
+</body>
+
+</html>

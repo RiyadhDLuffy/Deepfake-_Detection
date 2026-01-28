@@ -1,0 +1,122 @@
+{
+  "Apple___Apple_scab": {
+    "treatment_en": "Apply fungicides like captan or sulfur. Remove fallen leaves in autumn.",
+    "treatment_ar": "استخدم مبيدات الفطريات مثل الكابتان أو الكبريت. قم بإزالة الأوراق المتساقطة في الخريف.",
+    "prevention_ar": "اختر أصنافاً مقاومة، وحافظ على مسافات كافية بين الأشجار للتهوية، وتخلص من مخلفات الأوراق المصابة فوراً.",
+    "action_ar": "رش مبيد فطري وقائي قبل هطول الأمطار في فصل الربيع."
+  },
+  "Apple___Black_rot": {
+    "treatment_en": "Prune out infected branches. Use copper-based fungicides.",
+    "treatment_ar": "قلم الأغصان المصابة. استخدم مبيدات الفطريات النحاسية.",
+    "prevention_ar": "إزالة الأخشاب الميتة والمصابة من الأشجار، والحفاظ على الصحة العامة للشجرة عبر التسميد المتوازن.",
+    "action_ar": "إزالة الثمار المتعفنة (المحنطة) التي لا تزال عالقة على الشجرة."
+  },
+  "Apple___Cedar_apple_rust": {
+    "treatment_en": "Plant resistant varieties. Use fungicides early in spring.",
+    "treatment_ar": "ازرع أصنافاً مقاومة. استخدم مبيدات الفطريات في وقت مبكر من الربيع.",
+    "prevention_ar": "تجنب زراعة أشجار العرعر بالقرب من بساتين التفاح لأن الفطر يحتاج لكليهما لإكمال دورة حياته.",
+    "action_ar": "إزالة 'الكرات' الفطرية من أشجار العرعر القريبة قبل أن تنضج وتنتقل للتفاح."
+  },
+  "Apple___healthy": {
+    "treatment_en": "Keep the tree well-watered and pruned regularly.",
+    "treatment_ar": "حافظ على سقاية الشجرة وتقليمها بانتظام.",
+    "prevention_ar": "المراقبة الدورية للأوراق والبراعم لاكتشاف أي بوادر إصابة مبكرة.",
+    "action_ar": "استمر في برنامج التسميد العضوي للحفاظ على مناعة الشجرة."
+  },
+  "Tomato___Bacterial_spot": {
+    "treatment_en": "Use copper-based sprays. Avoid overhead watering.",
+    "treatment_ar": "استخدم البخاخات النحاسية. تجنب السقاية العلوية للأوراق.",
+    "prevention_ar": "استخدام بذور معتمدة، وتطبيق الدورة الزراعية، وتجنب العمل بين النباتات وهي مبللة بالماء.",
+    "action_ar": "رش المبيدات النحاسية فور ظهور أول بقعة لمنع الانتشار السريع."
+  },
+  "Tomato___Early_blight": {
+    "treatment_en": "Use fungicides containing chlorothalonil. Remove lower leaves.",
+    "treatment_ar": "استخدم مبيدات الفطريات التي تحتوي على الكلوروثالونيل. أزل الأوراق السفلية.",
+    "prevention_ar": "تغطية التربة (Mulching) لمنع وصول الفطر من التربة للأوراق، وترك مسافات واسعة للتهوية.",
+    "action_ar": "إزالة الأوراق السفلية المصابة لمنع صعود الفطر للأعلى."
+  },
+  "Tomato___Late_blight": {
+    "treatment_en": "Remove and destroy infected plants immediately. Apply protective fungicides.",
+    "treatment_ar": "أزل النباتات المصابة ودمرها فوراً. استخدم مبيدات فطريات وقائية.",
+    "prevention_ar": "تجنب الرطوبة الزائدة على الأوراق، وزراعة أصناف مقاومة، ومراقبة الطقس الرطب والبارد.",
+    "action_ar": "إزالة النبات المصاب بالكامل ووضعه في كيس مغلق بعيداً عن الحقل."
+  },
+  "Tomato___Leaf_Mold": {
+    "treatment_en": "Improve air circulation. Keep humidity low in greenhouses.",
+    "treatment_ar": "حسن تهوية المكان. حافظ على رطوبة منخفضة في البيوت الزجاجية.",
+    "prevention_ar": "استخدام نظام الري بالتنقيط بدلاً من الرش، وزيادة المسافات بين النباتات.",
+    "action_ar": "زيادة معدل التهوية في الصوبات الزراعية فوراً."
+  },
+  "Tomato___Septoria_leaf_spot": {
+    "treatment_en": "Remove infected leaves. Apply fungicides like mancozeb.",
+    "treatment_ar": "أزل الأوراق المصابة. استخدم مبيدات الفطريات مثل مانكوزيب.",
+    "prevention_ar": "تحكم في الأعشاب الضارة حول الطماطم، وطبق دورة زراعية لمدة عامين على الأقل.",
+    "action_ar": "التخلص من بقايا النباتات بعد الحصاد لمنع بقاء الفطر للعام القادم."
+  },
+  "Tomato___Spider_mites Two-spotted_spider_mite": {
+    "treatment_en": "Use insecticidal soap or neem oil. Increase humidity.",
+    "treatment_ar": "استخدم الصابون المبيد للحشرات أو زيت النيم. زد من الرطوبة.",
+    "prevention_ar": "الحفاظ على النباتات مرطبة جيداً، لأن العناكب تفضل الجفاف والغبار.",
+    "action_ar": "رش السطح السفلي للأوراق بالماء بقوة لغسل العناكب يدوياً."
+  },
+  "Tomato___Target_Spot": {
+    "treatment_en": "Apply fungicides. Ensure proper spacing between plants.",
+    "treatment_ar": "استخدم مبيدات الفطريات. تأكد من وجود مسافات كافية بين النباتات.",
+    "prevention_ar": "توفير صرف جيد للتربة، والحفاظ على تهوية جيدة داخل الشجيرة.",
+    "action_ar": "رش مبيدات فطرية تحتوي على النحاس أو مانكوزيب."
+  },
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "treatment_en": "Control whiteflies using insecticides. Remove infected plants.",
+    "treatment_ar": "كافح الذبابة البيضاء باستخدام المبيدات. أزل النباتات المصابة.",
+    "prevention_ar": "استخدام شباك ضيقة في البيوت المحمية لمنع دخول الذبابة البيضاء.",
+    "action_ar": "استخدام المصائد الصفراء اللاصقة لمراقبة ومكافحة الحشرات الناقلة."
+  },
+  "Tomato___Tomato_mosaic_virus": {
+    "treatment_en": "Remove infected plants. Clean tools after each use.",
+    "treatment_ar": "أزل النباتات المصابة. نظف الأدوات جيداً بعد كل استخدام.",
+    "prevention_ar": "غسل اليدين جيداً قبل ملامسة النباتات، خاصة للمدخنين (لأن الفيروس قد ينتقل من التبغ).",
+    "action_ar": "تعقيم جميع الأدوات الزراعية بالكحول بعد التعامل مع نبات يشتبه بإصابته."
+  },
+  "Tomato___healthy": {
+    "treatment_en": "Provide consistent moisture and balanced fertilizer.",
+    "treatment_ar": "وفر رطوبة ثابتة وسماداً متوازناً.",
+    "prevention_ar": "إضافة المادة العضوية للتربة لتقوية الجهاز المناعي للنبات.",
+    "action_ar": "المحافظة على برنامج ري منتظم لتجنب تشقق الثمار."
+  },
+  "Potato___Early_blight": {
+    "treatment_en": "Maintain plant vigor. Use fungicides if necessary.",
+    "treatment_ar": "حافظ على قوة النبات. استخدم مبيدات الفطريات إذا لزم الأمر.",
+    "prevention_ar": "التسميد المتوازن بالنيتروجين، والري في الصباح الباكر للسماح للأوراق بالجفاف.",
+    "action_ar": "التخلص من حبات البطاطس المصابة التي تظهر على السطح."
+  },
+  "Potato___Late_blight": {
+    "treatment_en": "Apply fungicides before rain. Harvest in dry weather.",
+    "treatment_ar": "استخدم مبيدات الفطريات قبل المطر. احصد المحصول في طقس جاف.",
+    "prevention_ar": "استخدام شتلات بطاطس خالية من الأمراض، وتجنب زراعة البطاطس بالقرب من الطماطم.",
+    "action_ar": "الإبلاغ الفوري للسلطات الزراعية المحلية عند رصد الإصابة نظراً لخطورتها."
+  },
+  "Potato___healthy": {
+    "treatment_en": "Store in a cool, dark, and well-ventilated area.",
+    "treatment_ar": "خزن في مكان بارد ومظلم وجيد التهوية.",
+    "prevention_ar": "الحرص على عدم جرح الدرنات أثناء الحصاد لمنع دخول البكتيريا.",
+    "action_ar": "تجفيف البطاطس جيداً قبل التخزين الطويل."
+  },
+  "Grape___Black_rot": {
+    "treatment_en": "Fungicide sprays from bloom until berries reach 1/4 inch.",
+    "treatment_ar": "رش مبيدات الفطريات من فترة الازهار حتى يصل حجم الثمار لـ 1/4 بوصة.",
+    "prevention_ar": "تقليم الكروم لضمان وصول الشمس والرياح لداخل الشجيرة، وإزالة العناقيد المصابة السابقة.",
+    "action_ar": "التخلص من الثمار المحنطة (المجففة) على الكرمة."
+  },
+  "Peach___Bacterial_spot": {
+    "treatment_en": "Prune during dormant season. Use copper sprays in fall.",
+    "treatment_ar": "قلم الأشجار في موسم السكون. استخدم البخاخات النحاسية في الخريف.",
+    "prevention_ar": "زراعة أصناف مقاومة تناسب منطقتك المناخية.",
+    "action_ar": "رش محلول مضاد حيوي زراعي في حالات الإصابة الشديدة."
+  },
+  "Pepper,_bell___Bacterial_spot": {
+    "treatment_en": "Practice crop rotation. Use certified disease-free seeds.",
+    "treatment_ar": "طبق الدورة الزراعية. استخدم بذوراً معتمدة خالية من الأمراض.",
+    "prevention_ar": "أدخل محاصيل غير مضيفة في الدورة الزراعية (مثل الحبوب).",
+    "action_ar": "استخدام بذور معالجة حرارياً لقتل البكتيريا الكامنة."
+  }
+}
