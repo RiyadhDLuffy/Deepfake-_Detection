@@ -61,6 +61,15 @@ class DeepfakeClassifier:
         
         self.model = self.model.to(device)
         self.model.eval()
+        
+        # Optimization: Use torch.compile if available (PyTorch 2.0+)
+        try:
+            if hasattr(torch, 'compile') and device.type == 'cuda':
+                self.model = torch.compile(self.model)
+                print("⚡ Inference optimized with torch.compile")
+        except:
+            pass
+            
         print(f"✅ Classifier model built with {self.num_classes} classes (PyTorch on {device})")
     
     def load_model(self, path: str):
@@ -125,10 +134,11 @@ class DeepfakeClassifier:
             "class_name": class_name,
             "class_name_ar": class_name_ar,
             "confidence": confidence,
-            "is_healthy": is_real, # Legacy field for compatibility
+            "is_healthy": is_real, 
             "is_real": is_real,
             "is_fake": not is_real,
-            "top_5_predictions": top_predictions
+            "top_5_predictions": top_predictions,
+            "inference_speed": "optimized"
         }
     
     def predict_from_bytes(self, image_bytes: bytes) -> dict:

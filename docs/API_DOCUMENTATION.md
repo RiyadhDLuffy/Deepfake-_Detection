@@ -1,20 +1,21 @@
-# 🌿 Smart Plant Disease Detection API Documentation
+# 👁️ TruthLens Deepfake Detection API Documentation
 
-## نظرة عامة
-REST API لنظام كشف أمراض النباتات باستخدام الذكاء الاصطناعي.
+## نظرة عامة (Overview)
+REST API لنظام كشف التزييف العميق (Deepfake Detection) باستخدام تقنيات الذكاء الاصطناعي والتحليل الجنائي للصور (Forensic Analysis).
 
 **Base URL:** `http://localhost:8000`
 
 ---
 
-## 🔐 المصادقة
-لا يتطلب هذا الإصدار مصادقة.
+## 🔐 المصادقة (Authentication)
+لا يتطلب هذا الإصدار مصادقة حالياً للإستخدام المحلي.
 
 ---
 
 ## 📍 Endpoints
 
 ### 1. Health Check
+التحقق من حالة النظام والموديلات.
 ```http
 GET /api/health
 ```
@@ -23,42 +24,14 @@ GET /api/health
 ```json
 {
     "status": "healthy",
-    "message": "API is running",
-    "models": {
-        "classifier": "ready",
-        "detector": "ready",
-        "segmentor": "ready",
-        "video_processor": "ready"
-    }
+    "system": "TruthLens AI"
 }
 ```
 
 ---
 
-### 2. Get Disease Classes
-```http
-GET /api/classes
-```
-
-**Response:**
-```json
-{
-    "total_classes": 38,
-    "classes": [
-        {
-            "id": 0,
-            "name": "Apple___Apple_scab",
-            "name_ar": "جرب التفاح",
-            "is_healthy": false
-        },
-        ...
-    ]
-}
-```
-
----
-
-### 3. Image Classification
+### 2. Image Classification (Real vs Fake)
+تصنيف الصورة حقيقية أم مزيفة.
 ```http
 POST /api/classify
 Content-Type: multipart/form-data
@@ -67,32 +40,27 @@ Content-Type: multipart/form-data
 **Parameters:**
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| file | File | ✅ | صورة النبات (JPEG, PNG) |
+| file | File | ✅ | الصورة المراد فحصها (JPEG, PNG) |
 
 **Response:**
 ```json
 {
     "success": true,
     "result": {
-        "class_name": "Tomato___Early_blight",
-        "class_name_ar": "اللفحة المبكرة للطماطم",
-        "confidence": 0.95,
-        "is_healthy": false,
-        "top_5_predictions": [
-            {
-                "class_name": "Tomato___Early_blight",
-                "class_name_ar": "اللفحة المبكرة للطماطم",
-                "confidence": 0.95
-            },
-            ...
-        ]
+        "class_name": "FAKE",
+        "class_name_ar": "صورة مزيفة (AI Generated)",
+        "confidence": 0.98,
+        "is_real": false,
+        "is_fake": true,
+        "top_5_predictions": [...]
     }
 }
 ```
 
 ---
 
-### 4. Object Detection
+### 3. Face & Object Detection (YOLOv8)
+كشف الوجوه والأشخاص في الصورة وتحديد مناطق الاهتمام.
 ```http
 POST /api/detect
 Content-Type: multipart/form-data
@@ -101,8 +69,7 @@ Content-Type: multipart/form-data
 **Parameters:**
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| file | File | ✅ | صورة النبات |
-| confidence_threshold | float | ❌ | حد الثقة (0-1)، الافتراضي: 0.3 |
+| file | File | ✅ | الصورة المرad فحصها |
 
 **Response:**
 ```json
@@ -111,35 +78,27 @@ Content-Type: multipart/form-data
     "result": {
         "detections": [
             {
-                "box": {
-                    "x": 100,
-                    "y": 150,
-                    "width": 200,
-                    "height": 180
-                },
-                "confidence": 0.87,
-                "label": "disease_region",
-                "label_ar": "منطقة مصابة"
+                "box": {"x": 100, "y": 80, "width": 150, "height": 200},
+                "confidence": 0.92,
+                "label": "person",
+                "label_ar": "شخص"
             }
         ],
         "num_detections": 1,
-        "annotated_image": "data:image/png;base64,..."
+        "annotated_image": "data:image/png;base64,...",
+        "engine": "YOLOv8"
     }
 }
 ```
 
 ---
 
-### 5. Image Segmentation
+### 4. Forensic Segmentation (ELA)
+تحليل مستوى الخطأ (Error Level Analysis) لتحديد مناطق التلاعب الرقمي.
 ```http
 POST /api/segment
 Content-Type: multipart/form-data
 ```
-
-**Parameters:**
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| file | File | ✅ | صورة النبات |
 
 **Response:**
 ```json
@@ -148,64 +107,42 @@ Content-Type: multipart/form-data
     "result": {
         "mask_image": "data:image/png;base64,...",
         "overlay_image": "data:image/png;base64,...",
-        "disease_percentage": 15.5,
-        "severity": "Mild",
-        "severity_ar": "إصابة خفيفة"
+        "fake_percentage": 15.5,
+        "severity_ar": "تلاعب عالي",
+        "engine": "DeepLabV3 + ELA"
     }
 }
 ```
 
 ---
 
-### 6. Full Analysis
+### 5. Advanced Forensic Analysis
+تحليل متطور يشمل FFT (التحليل الترددي) و Noise Analysis.
 ```http
-POST /api/analyze
+POST /api/analyze-advanced
 Content-Type: multipart/form-data
-```
-
-**Parameters:**
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| file | File | ✅ | صورة النبات |
-
-**Response:**
-```json
-{
-    "success": true,
-    "result": {
-        "classification": { ... },
-        "detection": { ... },
-        "segmentation": { ... }
-    }
-}
 ```
 
 ---
 
-### 7. Video Frame Processing
+### 6. Video Analysis
+تحليل ملف فيديو عبر أخذ عينات من الإطارات.
 ```http
-POST /api/video-frame
+POST /api/analyze-video
 Content-Type: multipart/form-data
 ```
 
-**Parameters:**
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| file | File | ✅ | إطار فيديو (JPEG) |
-
 ---
 
-### 8. Real-time Video Stream (WebSocket)
+### 7. Real-time Video Stream (WebSocket)
+كشف مباشر عبر الكاميرا.
 ```
 WS /api/video-stream
 ```
 
-**Send:** Binary frame data (JPEG)
-**Receive:** JSON analysis results
-
 ---
 
-## 📊 رموز الاستجابة
+## 📊 رموز الاستجابة (Response Codes)
 
 | Code | Description |
 |------|-------------|
@@ -215,14 +152,13 @@ WS /api/video-stream
 
 ---
 
-## 🛠️ أمثلة الاستخدام
+## 🛠️ أمثلة الاستخدام (Usage Examples)
 
 ### Python
 ```python
 import requests
 
-# تصنيف صورة
-with open('plant.jpg', 'rb') as f:
+with open('face.jpg', 'rb') as f:
     response = requests.post(
         'http://localhost:8000/api/classify',
         files={'file': f}
@@ -230,16 +166,10 @@ with open('plant.jpg', 'rb') as f:
     print(response.json())
 ```
 
-### cURL
-```bash
-curl -X POST "http://localhost:8000/api/classify" \
-  -F "file=@plant.jpg"
-```
-
-### JavaScript
+### Script JavaScript (Frontend)
 ```javascript
 const formData = new FormData();
-formData.append('file', imageFile);
+formData.append('file', fileInput.files[0]);
 
 fetch('/api/classify', {
     method: 'POST',
@@ -251,8 +181,7 @@ fetch('/api/classify', {
 
 ---
 
-## 📚 Swagger Documentation
-
+## 📚 API Visualization
 الوصول إلى توثيق Swagger التفاعلي:
 - **Swagger UI:** http://localhost:8000/docs
 - **ReDoc:** http://localhost:8000/redoc
